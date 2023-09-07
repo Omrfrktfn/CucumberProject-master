@@ -147,7 +147,7 @@ public class ReusableMethods {
     }
 
     //JS Scroll
-    public static void scroll(WebElement element) {
+    public static void scroll(String s, WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
