@@ -200,4 +200,14 @@ public class ReusableMethods {
 
         }
     }
-}
+
+    public static void clickElementByJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", ReusableMethods.waitForVisibility(element,5));
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+    public static WebElement waitForVisibility(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+  }
+
