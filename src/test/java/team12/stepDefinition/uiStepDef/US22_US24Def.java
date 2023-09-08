@@ -13,9 +13,9 @@ import team12.pages.US22_US24Pages;
 import team12.utilities.ConfigReader;
 import team12.utilities.Driver;
 import team12.utilities.ReusableMethods;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class US22_US24Def extends ReusableMethods {
 
@@ -407,3 +407,4 @@ public class US22_US24Def extends ReusableMethods {
         ReusableMethods.bekle(1);
     }
 }
+
