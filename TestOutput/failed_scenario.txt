@@ -1,0 +1,1 @@
+file:src/test/resources/features/1_ui_test/banuFeature/US22.feature:68

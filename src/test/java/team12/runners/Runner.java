@@ -14,7 +14,9 @@ import org.junit.runner.RunWith;
         glue = {"team12/stepDefinition", "team12/hooks"},
         tags = "@aa",
         dryRun = false,
-        monochrome = true
+        monochrome = false
+
+
 
 )
 
