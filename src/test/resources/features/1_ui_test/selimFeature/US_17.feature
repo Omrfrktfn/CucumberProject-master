@@ -1,0 +1,14 @@
+Feature:US 17 Teacher testi
+  @a #turkce karakter olmamalı
+  Scenario: TC 01 TEACHER ogrenciye NOT verebilmeli
+
+  Given kullanici ana sayfaya gider
+  Then TEACHER GIRISI YAPAR
+  When TEACHER DERS SECER
+  And TEACHER OGRENCI SECER
+  And TEACHER DONEM SECER
+  And TEACHER DEVAMSIZLIK-MIDTERM EXAM-FINAL EXAM-INFO NOTU GIRER(INFO NOTU HARF RAKAM VE OZEL ISARET ICEREBILMELI)
+
+
+
+

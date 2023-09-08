@@ -1,6 +1,7 @@
 package team12.utilities;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -16,6 +17,8 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class ReusableMethods {
 
@@ -168,6 +171,7 @@ public class ReusableMethods {
     public static void sendKeysJS(WebElement element, String text) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].value='" + text + "'", element);
+
     }
 
     //JS SendAttributeValue
@@ -183,10 +187,10 @@ public class ReusableMethods {
         System.out.println("Attribute Value: = " + attribute_Value);
     }
     //File Upload Robot Class
-    public static void uploadFile(String dosyaYolu){
-        try{
+    public static void uploadFile(String dosyaYolu) {
+        try {
             StringSelection stringSelection = new StringSelection(dosyaYolu);
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection,null);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
             Robot robot = new Robot();
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_V);
@@ -196,8 +200,20 @@ public class ReusableMethods {
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
             robot.delay(3000);
-        }catch (Exception ignored){
+        } catch (Exception ignored) {
+
 
         }
+
     }
-}
+
+    public static void clickElementByJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", ReusableMethods.waitForVisibility(element,5));
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+    public static WebElement waitForVisibility(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+  }
+
