@@ -171,6 +171,7 @@ public class ReusableMethods {
     public static void sendKeysJS(WebElement element, String text) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].value='" + text + "'", element);
+
     }
 
     //JS SendAttributeValue
