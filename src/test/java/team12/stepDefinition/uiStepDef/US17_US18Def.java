@@ -53,7 +53,7 @@ public class US17_US18Def {
 
     @When("teacher name lessonname ansentee midterm and final exam note info note ve average bilgilerini gorebilir")
     public void teacherNameLessonnameAnsenteeMidtermAndFinalExamNoteInfoNoteVeAverageBilgileriniGorebilir() {
-        ReusableMethods.scrollHome();
+
         Assert.assertTrue(us17Us18Pages.chooseLesson.isDisplayed());
         ReusableMethods.bekle(1);
         Assert.assertTrue(us17Us18Pages.absentee.isDisplayed());
