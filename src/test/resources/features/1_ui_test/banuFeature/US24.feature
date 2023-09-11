@@ -1,7 +1,8 @@
 @all2 @all
 Feature: US24 Admin Teacher oluşturabilmeli
   Background: Ana Sayfaya Gider
-    Given kullanici "baseUrl" sayfasina gider
+
+    Given user "baseUrl" goes to the home page
     And User clicks the Login section
     And User enters given infos and login
       | email          | password      |
