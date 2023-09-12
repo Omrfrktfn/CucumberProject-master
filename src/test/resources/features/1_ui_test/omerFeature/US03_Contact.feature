@@ -1,8 +1,8 @@
 Feature:US03/Kullanıcılar sayfadan mesaj gönderebilmelidir.(Contact)
 
   Background: browser
-    Given kullanici "baseUrl" sayfasina gider
-    Given kullanici contact butonuna tiklar.
+    Given kullanici omer "baseUrl" sayfasina gider
+    Given kullanici omer contact butonuna tiklar.
 
 
   @us03tc01
@@ -11,8 +11,8 @@ Feature:US03/Kullanıcılar sayfadan mesaj gönderebilmelidir.(Contact)
     Then kullanici sendMessage butonuna tiklar
     And kullanici kayit mesaji yapildigini dogrular
     Examples:
-      | name     | email             | subject                 | message                      |
-      | sammaata | samatta@gmail.com | Kayitlar hakkinda bilgi | yeni kayitlar hakkinda bilgi |
+      | name     | email         | subject                 | message                      |
+      | sammaata | xyz@gmail.com | Kayitlar hakkinda bilgi | yeni kayitlar hakkinda bilgi |
 
      #PASS
 

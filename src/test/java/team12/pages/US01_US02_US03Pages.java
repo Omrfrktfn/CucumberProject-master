@@ -116,4 +116,13 @@ public class US01_US02_US03Pages {
     @FindBy(xpath = "//td[span[text()='Aniee']]/../td[5]")
     public WebElement deleteButton;
 
+    @FindBy(xpath = "//a[normalize-space()='Contact Get All']")
+    public WebElement contactGetAll;
+
+    @FindBy(xpath = "//span[normalize-space()='fred@gamil.com']")
+    public WebElement contactGetEmail;
+
+
+
+
 }
