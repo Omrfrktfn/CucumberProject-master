@@ -1,14 +1,14 @@
 Feature:US02/Admin Guest User List
 
   Background: browser
-    Given kullanici "baseUrl" sayfasina gider
-    When kullanici login butonuna tiklar
-    Then kullanici usarname girer
-    Then kullanici password girer
-    And kullanici user name login butonuna tiklar
+    Given kullanici omer "baseUrl" sayfasina gider
+    When kullanici omer login butonuna tiklar
+    Then kullanici omer usarname girer
+    Then kullanici omer password girer
+    And kullanici omer user name login butonuna tiklar
     And kullanici sigin-login oldugunu dogrular
-    And kullanici menu secegine tiklar
-    And kullanici Guest User secegine tiklar
+    And kullanici omer menu secegine tiklar
+    And kullanici omer Guest User secegine tiklar
     And kullanici Guest User list sayfasini gorur
 
   @us02tc01

@@ -34,23 +34,26 @@ public class US01_US02_US03Def {
     Statement statement;
     ResultSet resultSet;
 
+    public static String emailGetAll;
 
-    @Given("kullanici {string} sayfasina gider")
-    public void kullaniciSayfasinaGider(String baseUrl) {
+
+    @Given("kullanici omer {string} sayfasina gider")
+    public void kullaniciOmerSayfasinaGider(String baseUrl) {
         Driver.getDriver().get(ConfigReader.getProperty(baseUrl));
         ReusableMethods.bekle(2);
     }
-    @Given("kullanici register butonuna tiklar")
-    public void kullaniciRegisterButonunaTiklar() {
 
+    @Given("kullanici omer register butonuna tiklar")
+    public void kullaniciOmerRegisterButonunaTiklar() {
         pagesLocat.register.click();
     }
+
 
     @When("kullanici name {string}, surname {string},birth_place {string}, phone_number {string},gender {string}, birth_day {string},ssn {string},username {string},password{string}")
     public void kullaniciNameSurnameBirth_placePhone_numberGenderBirth_daySsnUsernamePassword(String name, String surname, String birth_place, String phone_number, String gender, String birth_day, String ssn, String username, String password) {
         Faker faker = new Faker();
-      //  fakeUsername = faker.name().name();
-       // pagesLocat.nameInput.sendKeys(fakeUsername);
+        //  fakeUsername = faker.name().name();
+        // pagesLocat.nameInput.sendKeys(fakeUsername);
 
         pagesLocat.nameInput.sendKeys(name);
 
@@ -79,9 +82,8 @@ public class US01_US02_US03Def {
     }
 
 
-    @And("kullanici kayit yapildigini dogrular")
-    public void kullaniciKayitYapildiginiDogrular() {
-
+    @And("kullanici omer kayit yapildigini dogrular")
+    public void kullaniciOmerKayitYapildiginiDogrular() {
         ReusableMethods.bekle(2);
         //  US01_US02_US03Pages pagesLocat = new US01_US02_US03Pages();
         ReusableMethods.click(pagesLocat.registerButton);
@@ -90,11 +92,12 @@ public class US01_US02_US03Def {
     }
 
 
-    @Given("kullanici contact butonuna tiklar.")
-    public void kullaniciContactButonunaTiklar() {
+    @Given("kullanici omer contact butonuna tiklar.")
+    public void kullaniciOmerContactButonunaTiklar() {
         pagesLocat.contact.click();
         ReusableMethods.bekle(2);
     }
+
 
     @When("kullanici name {string}, email {string},subject {string}, message {string}")
     public void kullaniciNameEmailSubjectMessage(String name, String email, String subject, String message) {
@@ -189,20 +192,23 @@ public class US01_US02_US03Def {
         pagesLocat.passwordInput.sendKeys(password);
     }
 
-    @When("kullanici login butonuna tiklar")
-    public void kullaniciLoginButonunaTiklar() {
+
+    @When("kullanici omer login butonuna tiklar")
+    public void kullaniciOmerLoginButonunaTiklar() {
         pagesLocat.Login.click();
         ReusableMethods.bekle(1);
     }
 
-    @Then("kullanici usarname girer")
-    public void kullaniciUsarnameGirer() {
+
+    @Then("kullanici omer usarname girer")
+    public void kullaniciOmerUsarnameGirer() {
         pagesLocat.loginUserName.sendKeys(ConfigReader.getProperty("adminName"));
         ReusableMethods.bekle(1);
     }
 
-    @Then("kullanici password girer")
-    public void kullaniciPasswordGirer() {
+
+    @Then("kullanici omer password girer")
+    public void kullaniciOmerPasswordGirer() {
         pagesLocat.loginPassword.sendKeys(ConfigReader.getProperty("adminPassword"));
         ReusableMethods.bekle(1);
 
@@ -210,8 +216,9 @@ public class US01_US02_US03Def {
         // pagesLocat.sendData(pagesLocat.loginPassword,ConfigReader.getProperty("adminPassword"));
     }
 
-    @And("kullanici user name login butonuna tiklar")
-    public void kullaniciUserNameLoginButonunaTiklar() {
+
+    @And("kullanici omer user name login butonuna tiklar")
+    public void kullaniciOmerUserNameLoginButonunaTiklar() {
         pagesLocat.loginButton.click();
     }
 
@@ -221,14 +228,15 @@ public class US01_US02_US03Def {
         ReusableMethods.bekle(1);
     }
 
-    @And("kullanici menu secegine tiklar")
-    public void kullaniciMenuSecegineTiklar() {
+
+    @And("kullanici omer menu secegine tiklar")
+    public void kullaniciOmerMenuSecegineTiklar() {
         pagesLocat.loginMenu.click();
         ReusableMethods.bekle(1);
     }
 
-    @And("kullanici Guest User secegine tiklar")
-    public void kullaniciGuestUserSecegineTiklar() {
+    @And("kullanici omer Guest User secegine tiklar")
+    public void kullaniciOmerGuestUserSecegineTiklar() {
         pagesLocat.guestUser.click();
         ReusableMethods.bekle(1);
     }
@@ -417,6 +425,20 @@ public class US01_US02_US03Def {
         ReusableMethods.visibleWait(pagesLocat.alertMessage, 5);
         assertTrue(pagesLocat.ssnInput.isDisplayed());
     }
+
+    @And("kullanici Contact Get All secegine tiklar")
+    public void kullaniciContactGetAllSecegineTiklar() {
+
+        pagesLocat.contactGetAll.click();
+        ReusableMethods.bekle(1);
+        emailGetAll = pagesLocat.contactGetEmail.getText();
+        System.out.println("emailGetAll = " + emailGetAll);
+
+
+    }
+
+
+
 
     // //tbody/tr/td[1]
     // //td[span[text()='Del']]/../td[5]
