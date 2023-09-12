@@ -2,7 +2,7 @@
 Feature: US22 Admin Added Test
 
   Background: US22 all steps
-    Given kullanici "baseUrl" sayfasina gider
+    Given user "baseUrl" goes to the home page
     And User clicks the Login section
     And User enters given infos and login
       | email          | password      |

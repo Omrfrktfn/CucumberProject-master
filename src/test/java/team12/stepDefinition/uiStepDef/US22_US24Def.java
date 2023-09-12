@@ -13,7 +13,6 @@ import team12.pages.US22_US24Pages;
 import team12.utilities.ConfigReader;
 import team12.utilities.Driver;
 import team12.utilities.ReusableMethods;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,15 +23,11 @@ public class US22_US24Def extends ReusableMethods {
 
     //*************** US22
 
-    @Given("kullanici {string} sayfasina gider")
-    public void kullanici_sayfasina_gider(String url) {
+    @Given("user {string} goes to the home page")
+    public void user_goes_homepage(String url) {
         Driver.getDriver().get(ConfigReader.getProperty(url));
     }
 
-   // @Given("user waits {int} second")
-    //public void user_waits_second(int second)  {
-       // ReusableMethods.bekle(second);
-    //}
 
     @Given("User clicks the Login section")
     public void user_clicks_the_login_section() {
@@ -50,14 +45,6 @@ public class US22_US24Def extends ReusableMethods {
     public void sees_title(String str) {
         Assert.assertTrue(US22_US24Pages.addAdminHeaderUs_22.getText().contains(str));
         ReusableMethods.bekle(4);
-    }
-
-    @And("User enters the {string}, {string}, {string}, select gender, {string}, {string}, {string} , {string}, {string} infos and submit")
-    public void userEntersTheInfosAndSubmit(String name, String surname, String birthPlace, String dateOfBirth, String phone, String ssnNumber, String userName, String password) {
-        ReusableMethods.scrollHome();
-        ReusableMethods.bekle(2);
-        US22_US24Pages.nameUs_22.sendKeys(name, Keys.TAB, surname, Keys.TAB, birthPlace, Keys.TAB, Keys.ARROW_DOWN, Keys.TAB, dateOfBirth, Keys.TAB, phone, Keys.TAB, ssnNumber, Keys.TAB, userName, Keys.TAB, password, Keys.TAB, Keys.ENTER);
-        ReusableMethods.bekle(2);
     }
 
     @Then("User closed the page")
@@ -172,11 +159,6 @@ public class US22_US24Def extends ReusableMethods {
         ReusableMethods.bekle(1);
     }
 
-    @And("User enters the {string} and {string} infos and submit")
-    public void userEntersTheAndInfosAndSubmit(String userName, String password) {
-        US22_US24Pages.userNameUs_22.sendKeys(userName, Keys.TAB, password, Keys.TAB, Keys.ENTER);
-        ReusableMethods.bekle(2);
-    }
 
     //****************
 
