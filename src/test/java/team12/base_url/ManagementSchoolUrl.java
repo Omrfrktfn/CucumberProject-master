@@ -17,6 +17,6 @@ public class  ManagementSchoolUrl {
                 .setContentType(ContentType.JSON)
                 .build();
     }
-
+//guncelleme
 
 }
