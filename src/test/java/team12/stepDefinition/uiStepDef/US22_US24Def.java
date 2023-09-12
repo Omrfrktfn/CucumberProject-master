@@ -28,6 +28,7 @@ public class US22_US24Def extends ReusableMethods {
         Driver.getDriver().get(ConfigReader.getProperty(url));
     }
 
+
     @Given("User clicks the Login section")
     public void user_clicks_the_login_section() {
         click(US22_US24Pages.logInUs_22);

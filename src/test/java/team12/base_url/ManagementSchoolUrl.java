@@ -6,17 +6,14 @@ import io.restassured.specification.RequestSpecification;
 
 
 //import static utilities.AuthenticationMedunna.generateToken;
-
-import static team12.utilities.AuthenticationSchool.generateToken;
-
-public class ManagementSchoolUrl {
+public class  ManagementSchoolUrl {
 
     public static RequestSpecification spec;
 
     public static void setup() {
         spec = new RequestSpecBuilder()
                 .setBaseUri("https://managementonschools.com/app")
-                .addHeader("Authorization", generateToken())
+                //.addHeader("Authorization", generateToken())
                 .setContentType(ContentType.JSON)
                 .build();
     }
