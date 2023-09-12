@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import team12.utilities.Driver;
 
+import static team12.base_url.BaseUrl.setUp;
 import static team12.base_url.ManagementSchoolUrl.setup;
 
 
