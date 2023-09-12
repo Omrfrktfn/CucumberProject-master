@@ -6,7 +6,7 @@ import io.restassured.specification.RequestSpecification;
 
 //import static utilities.AuthenticationMedunna.generateToken;
 
-public class ManagementSchoolUrl {
+public class  ManagementSchoolUrl {
 
     public static RequestSpecification spec;
 

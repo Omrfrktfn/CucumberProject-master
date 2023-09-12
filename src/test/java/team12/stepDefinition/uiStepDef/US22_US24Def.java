@@ -29,10 +29,10 @@ public class US22_US24Def extends ReusableMethods {
         Driver.getDriver().get(ConfigReader.getProperty(url));
     }
 
-    @Given("user waits {int} second")
-    public void user_waits_second(int second)  {
-        ReusableMethods.bekle(second);
-    }
+   // @Given("user waits {int} second")
+    //public void user_waits_second(int second)  {
+       // ReusableMethods.bekle(second);
+    //}
 
     @Given("User clicks the Login section")
     public void user_clicks_the_login_section() {
