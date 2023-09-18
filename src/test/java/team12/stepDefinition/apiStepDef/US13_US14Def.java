@@ -16,7 +16,7 @@ public class US13_US14Def {
     @Given("Gonderilecek ogretmen bilgileri hazirlanir")
     public void gonderilecek_ogretmen_bilgileri_hazirlanir() {
         //set the expected data
-        expectedData
+
 
     }
 
