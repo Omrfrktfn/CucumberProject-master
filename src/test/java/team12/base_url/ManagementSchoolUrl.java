@@ -7,7 +7,6 @@ import io.restassured.specification.RequestSpecification;
 import static team12.utilities.AuthenticationSchool.generateToken;
 
 
-//import static utilities.AuthenticationMedunna.generateToken;
 public class  ManagementSchoolUrl {
 
     public static RequestSpecification spec;
