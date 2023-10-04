@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import team12.pojos.esenPojo.ResponsePojo;
 import team12.pojos.omerPojo.GuestUserRegisterPojo;
-import team12.pojos.omerPojo.RegisterResponsePojo;
+//import team12.pojos.omerPojo.RegisterResponsePojo;
 import team12.pojos.omerPojo.US03Pojo;
 
 import java.lang.reflect.Type;
@@ -21,11 +21,12 @@ import static team12.base_url.ManagementSchoolUrl.spec;
 public class US01_US02_Api_Def {
 
 
-    Response response;
+    static Response response;
 
     GuestUserRegisterPojo expectedData;
 
-    GuestUserRegisterPojo actualData;
+    ResponsePojo actualData;
+
 
     @Given("Register eklemek icin Post request hazirligi yapilir")
     public void registerEklemekIcinPostRequestHazirligiYapilir() {
@@ -42,23 +43,25 @@ public class US01_US02_Api_Def {
 
 /*
 {
+ {
   "birthDay": "1997-01-01",
   "birthPlace": "warsaw",
   "gender": "MALE",
-  "name": "emly",
+  "name": "oliveira",
   "password": "Emly.123",
-  "phoneNumber": "507 542 3687",
-  "ssn": "494-66-2587",
+  "phoneNumber": "305 542 3687",
+  "ssn": "498-66-1287",
   "surname": "marly",
-  "username": "Emly"
+  "username": "Oliveira"
+}
 }
  */
 
-        expectedData = new GuestUserRegisterPojo("1997-01-01", "warsaw", "MALE", "emly",
-                "Emly.123", "507 542 3687",
-                "494-66-2587", "marly",
-                "Emly");
-
+        expectedData = new GuestUserRegisterPojo("1997-01-01", "warsaw",
+                "MALE", "oliveira",
+                "Emly.123", "305 542 3037",
+                "498-12-1287", "marly",
+                "veira");
 
     }
 
@@ -69,11 +72,9 @@ public class US01_US02_Api_Def {
                 body(expectedData).
                 when().
                 post("{first}/{second}");
-        // response.prettyPrint();
+        response.prettyPrint();
 
-       // actualData = response.as(RegisterResponsePojo.class);
-        actualData = new ObjectMapper().readValue(response.asString(), GuestUserRegisterPojo.class);
-
+        actualData = response.as(ResponsePojo.class);
 
     }
 
@@ -81,15 +82,14 @@ public class US01_US02_Api_Def {
     public void registerBilgileriDogrulanir() {
 
         assertEquals(200, response.getStatusCode());
-        assertEquals(expectedData.getBirthDay(),actualData.getBirthDay());
-        assertEquals(expectedData.getBirthPlace(),actualData.getBirthPlace());
-        assertEquals(expectedData.getGender(),actualData.getGender());
-        assertEquals(expectedData.getName(),actualData.getName());
-        assertEquals(expectedData.getPassword(),actualData.getPassword());
-        assertEquals(expectedData.getPhoneNumber(),actualData.getPhoneNumber());
-        assertEquals(expectedData.getSsn(),actualData.getSsn());
-        assertEquals(expectedData.getSurname(),actualData.getSurname());
-        assertEquals(expectedData.getUsername(),actualData.getUsername());
+        assertEquals(expectedData.getBirthDay(), actualData.getObject().getBirthDay());
+        assertEquals(expectedData.getBirthPlace(), actualData.getObject().getBirthPlace());
+        assertEquals(expectedData.getGender(), actualData.getObject().getGender());
+        assertEquals(expectedData.getName(), actualData.getObject().getName());
+        assertEquals(expectedData.getPhoneNumber(), actualData.getObject().getPhoneNumber());
+        assertEquals(expectedData.getSsn(), actualData.getObject().getSsn());
+        assertEquals(expectedData.getSurname(), actualData.getObject().getSurname());
+        assertEquals(expectedData.getUsername(), actualData.getObject().getUsername());
 
 
     }

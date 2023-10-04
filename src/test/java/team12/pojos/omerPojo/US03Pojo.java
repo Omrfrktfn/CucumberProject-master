@@ -8,7 +8,6 @@ public class US03Pojo implements Serializable {
 	private String name;
 	private String subject;
 
-
 	public US03Pojo() {
 	}
 
