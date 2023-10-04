@@ -17,6 +17,12 @@ public class US06_US07_US03Pages {
     @FindBy(xpath = "//a[@href='/login']")
     public static WebElement login;
 
+    @FindBy(xpath = "//a[@class='header_link ms-2']")
+    public  WebElement loginayni;
+
+    @FindBy(xpath = "//a[@class='header_link ms-2']")
+    public static WebElement loginayniuc;
+
     @FindBy(xpath = "//input[@id='username']")
     public static WebElement username;
 
@@ -108,7 +114,7 @@ public class US06_US07_US03Pages {
 
 
 
-    //US07
+    //US07.feature
     @FindBy(xpath = "//button[text()='Menu']")
     public static WebElement menuButonu;
 
@@ -138,7 +144,7 @@ public class US06_US07_US03Pages {
 
 
 
-    //US23-->US07 ile locateler ayni
+    //US23.feature-->US07.feature ile locateler ayni
     @FindBy(xpath = "(//a[@href='#'])[25]")
     public static WebElement viceDeanManagement;
 
@@ -147,6 +153,20 @@ public class US06_US07_US03Pages {
 
     @FindBy(xpath = "//h3[text()='Admin Management']")
     public static WebElement adminManagement;
+
+
+
+    //DB CIKIS
+    @FindBy(xpath = "//button[text()='Menu']")
+    public static WebElement dbmenu;
+
+    @FindBy(xpath = "//a[text()='Logout']")
+    public static WebElement dbLOGOUT;
+
+    @FindBy(xpath = "//button[text()='Yes']")
+    public static WebElement dbyestusu;
+
+
 
 
 }

@@ -5,16 +5,18 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
 import static team12.utilities.AuthenticationSchool.generateToken;
+import static team12.utilities.AuthenticationSchoolDean.generateToken1;
 
 
-public class  ManagementSchoolUrl {
+//import static utilities.AuthenticationMedunna.generateToken;
+public class ManagementSchoolUrlDean {
 
-    public static RequestSpecification spec;
+    public static RequestSpecification spec1;
 
-    public static void setup() {
-        spec = new RequestSpecBuilder()
+    public static void setup1() {
+        spec1 = new RequestSpecBuilder()
                 .setBaseUri("https://managementonschools.com/app")
-                .addHeader("Authorization", generateToken())
+                .addHeader("Authorization", generateToken1())
                 .setContentType(ContentType.JSON)
                 .build();
     }
