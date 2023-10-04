@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import team12.pages.US06_US07_US03Pages;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -215,5 +216,15 @@ public class ReusableMethods {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
+
+
+
+    public static void bekleveclick (){
+        ReusableMethods.click(US06_US07_US03Pages.login);
+        ReusableMethods.bekle(3);
+
+    }
+
   }
 

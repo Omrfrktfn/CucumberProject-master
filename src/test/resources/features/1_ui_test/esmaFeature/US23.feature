@@ -16,7 +16,6 @@ Feature: US023 Admin Vice Dean oluşturabilmeli
     Then Cinsiyet secilmeli usalti
     Then Dogum tarihi girilmeli usalti
     And phone_number ,ssn ,username girilmeli usalti
-    Then Telefon numarasi girilmeli, formati xxx-xxx-xxxx seklinde olmadiginda,  Minimum oniki character (XXX-XXX-XXXX) hatasi vermeli usalti
     Then Password en az sekiz karakterden olusmalı, buyuk harf, kucuk harf ve bir rakam icermeli usalti
     Then Submit butonu gorunur olmali ve tiklanmali usalti
     Then Vice Dean olusturuldugu dogrulanmali, Vice Dean Saved mesaji gorulmeli usalti

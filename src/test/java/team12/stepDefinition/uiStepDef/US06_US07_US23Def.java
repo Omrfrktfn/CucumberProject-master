@@ -36,12 +36,7 @@ public class US06_US07_US23Def {
     Statement statement;
     ResultSet resultSet;
 
-//US06
-
-
-
-
-
+//US06.feature
 
 
     @Given("Anasayfaya basarili bir sekilde acilmali usalti")
@@ -164,12 +159,17 @@ public class US06_US07_US23Def {
     }
 
 
-
     @And("Sayfa kapatilmali usalti")
     public void sayfaKapatilmaliUsalti() {
         Driver.getDriver().quit();
         ReusableMethods.bekle(3);
     }
+
+
+
+
+
+
 
     @Then("Name girilmediginde Required mesaji gorulmeli usalti")
     public void nameGirilmedigindeRequiredMesajiGorulmeliUsalti() {
@@ -459,8 +459,7 @@ public class US06_US07_US23Def {
     }
 
 
-
-    //US07
+    //US07.feature
     @Then("Menu butonuna tiklanmali usalti")
     public void menuButonunaTiklanmaliUsalti() {
         ReusableMethods.click(US06_US07_US03Pages.menuButonu);
@@ -479,6 +478,7 @@ public class US06_US07_US23Def {
 
         ReusableMethods.bekle(2);
     }
+
     @Then("Contact Message sayfasinin acildigi dogrulanmali usalti")
     public void contactMessageSayfasininAcildigiDogrulanmaliUsalti() {
 
@@ -486,6 +486,7 @@ public class US06_US07_US23Def {
         ReusableMethods.bekle(3);
 
     }
+
     @Then("Mesajlarin gorunurlugu dogrulanmali usalti")
     public void mesajlarinGorunurluguDogrulanmaliUsalti() {
 
@@ -496,15 +497,12 @@ public class US06_US07_US23Def {
     }
 
 
-
     @Then("Silme butonunun gorunurlugu dogrulanmali usalti")
     public void silmeButonununGorunurluguDogrulanmaliUsalti() {
         String bug = "bug";
         System.out.println("bug");
         ReusableMethods.bekle(2);
     }
-
-
 
 
     @Then("Mesajlari silinebilmeli ve mesajin silindigi dogrulanmali, silinmediyse silinmedigi dogrulanmali usalti")
@@ -538,8 +536,7 @@ public class US06_US07_US23Def {
     }
 
 
-
-    //US23
+    //US23.feature
     @Then("Admin username ve admin sifre girilir. usalti")
     public void adminUsernameVeAdminSifreGirilirUsalti() {
 
