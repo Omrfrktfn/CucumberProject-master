@@ -13,10 +13,8 @@ public class GuestUserRegisterPojo implements Serializable {
 	private String surname;
 	private String username;
 
-
 	public GuestUserRegisterPojo() {
 	}
-
 
 	public GuestUserRegisterPojo(String birthDay, String birthPlace, String gender, String name, String password, String phoneNumber, String ssn, String surname, String username) {
 		this.birthDay = birthDay;

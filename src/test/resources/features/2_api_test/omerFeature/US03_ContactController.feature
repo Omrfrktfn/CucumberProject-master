@@ -1,4 +1,4 @@
-@api
+@apitest
 Feature: Get ContactController Request
 
   Scenario: Get SearchBySubject ile Dogrulama

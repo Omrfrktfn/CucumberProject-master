@@ -9,6 +9,8 @@ import team12.pojos.omerPojo.US03Pojo;
 import team12.pojos.omerPojo.US03ResponsePojo;
 
 import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
@@ -17,11 +19,15 @@ import static team12.base_url.ManagementSchoolUrl.spec;
 
 public class US03_Api_Def {
 
-    Response response;
+    static Response response;
 
     US03Pojo expectedData;
 
-    US03Pojo actualData;
+    // US03Pojo actualData;
+
+    US03ResponsePojo actualData;
+
+    //Map<String,Object> actualData;
 
 
     @Given("Contact eklemek icin Post request hazirligi yapilir")
@@ -30,8 +36,16 @@ public class US03_Api_Def {
         //https://managementonschools.com/app/contactMessages/searchByEmail?email=oft@gmail.com
         //https://managementonschools.com/app/contactMessages/searchBySubject?subject=Fiyatlar%20hakkinda%20bilgi
 
-        spec.pathParams("first", "contactMessages", "second", "searchBySubject").
-                queryParam("subject", "education");
+        //https://managementonschools.com/app/contactMessages/save
+
+        spec.pathParams("first", "contactMessages",
+                "second", "save");
+
+        //  spec.pathParams("first","contactMessages","second","getAll").
+        //        queryParams("size","10000");
+
+         //spec.pathParams("first", "contactMessages", "second", "searchBySubject").
+           //    queryParam("subject", "education");
 
     }
 
@@ -40,18 +54,16 @@ public class US03_Api_Def {
     public void gonderilecekContactBilgileriHazirlanir() {
 
          /*
-       {
-  "email": "karl@gamil.com",
+     {
+  "email": "tfn@02gmail.com",
   "message": "information about classes",
-  "name": "karl",
+  "name": "emly",
   "subject": "education"
 }
          */
 
-
-        expectedData = new US03Pojo("karl@gamil.com", "information about classes",
-                "karl", "education");
-
+        expectedData = new US03Pojo("zygadf@05gmail.com", "fagasadf classes",
+                "veira", "akfaf");
 
         //  System.out.println(expectedData);
 
@@ -69,10 +81,10 @@ public class US03_Api_Def {
 
         response.prettyPrint();
 
-        //actualData = response.as((Type) US03ResponsePojo.class);
+        actualData = response.as(US03ResponsePojo.class);
 
-        actualData = new ObjectMapper().readValue(response.asString(), US03Pojo.class);
-
+        //actualData = response.as(HashMap.class);
+        // actualData = new ObjectMapper().readValue(response.asString(), US03Pojo.class);
 
     }
 
@@ -81,11 +93,10 @@ public class US03_Api_Def {
     public void contactBilgileriDogrulanir() {
 
         assertEquals(200, response.getStatusCode());
-        assertEquals(expectedData.getName(), actualData.getName());
-        assertEquals(expectedData.getEmail(), actualData.getEmail());
-        assertEquals(expectedData.getSubject(), actualData.getSubject());
+        assertEquals(expectedData.getName(), actualData.getObject().getName());
+        assertEquals(expectedData.getEmail(), actualData.getObject().getEmail());
+        assertEquals(expectedData.getSubject(), actualData.getObject().getSubject());
         assertEquals(expectedData.getMessage(), actualData.getMessage());
-
 
     }
 

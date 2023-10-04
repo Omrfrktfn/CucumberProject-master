@@ -12,7 +12,6 @@ public class US03ObjectPojo implements Serializable {
 	public US03ObjectPojo() {
 	}
 
-
 	public US03ObjectPojo(String name, String email, String subject, String message, String date) {
 		this.name = name;
 		this.email = email;

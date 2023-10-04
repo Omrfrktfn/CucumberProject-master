@@ -1,4 +1,4 @@
-
+@apitestius01/02
 Feature: Guest User Register Request
 
   Scenario: Get SearchById ile Dogrulama

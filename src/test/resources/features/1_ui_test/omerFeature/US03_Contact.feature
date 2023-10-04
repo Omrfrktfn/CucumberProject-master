@@ -12,7 +12,7 @@ Feature:US03/Kullanıcılar sayfadan mesaj gönderebilmelidir.(Contact)
     And kullanici kayit mesaji yapildigini dogrular
     Examples:
       | name     | email         | subject                 | message                      |
-      | sammaata | xyz@gmail.com | Kayitlar hakkinda bilgi | yeni kayitlar hakkinda bilgi |
+      | semmaata | lyz@gmail.com | Kayitlar hakkinda bilgi | yeni kayitlar hakkinda bilgi |
 
      #PASS
 

@@ -2,25 +2,25 @@ package team12.pojos.omerPojo;
 
 import java.io.Serializable;
 
-public class RegisterResponsePojo implements Serializable {
-	private RegisterObjectPojo object;
+public class ResponsePojo implements Serializable {
+	private ObjectPojo object;
 	private String message;
 	private String httpStatus;
 
-	public RegisterResponsePojo() {
+	public ResponsePojo() {
 	}
 
-	public RegisterResponsePojo(RegisterObjectPojo object, String message, String httpStatus) {
+	public ResponsePojo(ObjectPojo object, String message, String httpStatus) {
 		this.object = object;
 		this.message = message;
 		this.httpStatus = httpStatus;
 	}
 
-	public void setObject(RegisterObjectPojo object){
+	public void setObject(ObjectPojo object){
 		this.object = object;
 	}
 
-	public RegisterObjectPojo getObject(){
+	public ObjectPojo getObject(){
 		return object;
 	}
 
