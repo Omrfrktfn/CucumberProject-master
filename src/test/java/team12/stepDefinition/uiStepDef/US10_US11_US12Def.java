@@ -94,7 +94,7 @@ public class US10_US11_US12Def {
 
     @And("user clicks on submit button to create the lesson")
     public void userClicksOnSubmitButtonToCreateTheLesson() {
-        //us10Us11Us12Pages.submitLessonButton.click();
+        us10Us11Us12Pages.submitLessonButton.click();
 
     }
 
@@ -155,7 +155,7 @@ public class US10_US11_US12Def {
         actions.scrollByAmount(0,5000).perform();
         WebElement teacherDdm=us10Us11Us12Pages.chooseTeacherDdm;
         Select select=new Select(teacherDdm);
-        select.selectByVisibleText("Ted Baker");
+        select.selectByIndex(12);
         ReusableMethods.bekle(2);
         
     }
@@ -173,7 +173,9 @@ public class US10_US11_US12Def {
     @And("user closes the driver")
     public void userClosesTheDriver() {
 
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
+
+
 }
 
